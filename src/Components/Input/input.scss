@@ -1,0 +1,16 @@
+.input {
+    line-height: 18px;
+    position: relative;
+    & input {
+        background: #ffffff;
+        border: 1px solid #d3d9de;
+        border-radius: 6px;
+        padding: 10px 12px 10px 12px;
+        width: 100%;
+        transition: 0.3s ease;
+        &:focus {
+            border: 1px solid #3487cc;
+            transition: 0.3s ease;
+        }
+    }
+}

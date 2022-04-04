@@ -1,0 +1,83 @@
+.chat {
+    width: 600px;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    border-radius: 4px;
+    position: relative;
+
+    &__messages {
+        overflow: scroll;
+        padding: 16px;
+        flex: 1 1 auto;
+        background: #fff;
+        position: relative;
+        border-radius: 4px 4px 0px 0px;
+    }
+    &__input {
+        padding: 14px 16px;
+        background: #fafbfc;
+        border: 1px solid #dce1e6;
+        border-radius: 0px 0px 4px 4px;
+    }
+    &__popup {
+        left: 50%;
+        bottom: 128px;
+        height: 280px;
+        position: fixed;
+        overflow: auto;
+        margin: 0 auto;
+        border: 1px solid #d3d9de;
+        border-radius: 1px;
+        transition: 0.3s ease;
+        background: #fff;
+
+        &.closed {
+            opacity: 0;
+            visibility: hidden;
+            transform: translate(-50%, -200px);
+            transition: 0.3s ease;
+        }
+        &.opened {
+            transition: 0.3s ease;
+            opacity: 1;
+            visibility: visible;
+            transform: translate(-50%, 0);
+        }
+    }
+    &__listOfMessages {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+    }
+    &-listOfMessages {
+        &-message {
+            &:not(:last-child) {
+                margin: 0 0 4px 0;
+            }
+            &__text {
+                & img {
+                    max-width: 400px;
+                }
+            }
+            &__date {
+                font-size: 0.9rem;
+                margin: 0 0 0 8px;
+                color: #99a2ad;
+            }
+        }
+    }
+}
+@media screen and (max-width: 700px) {
+    .chat {
+        &-listOfMessages {
+            &-message {
+                &__text {
+                    & img {
+                        max-width: 200px;
+                    }
+                }
+            }
+        }
+    }
+}
